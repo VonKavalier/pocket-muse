@@ -1,48 +1,59 @@
 # PocketMuse
 
-L'outil vous souffle quelques consignes, vous écrivez un tout petit texte. Sans enjeu, juste pour le plaisir et la satisfaction de terminer quelque chose.
+PocketMuse est une collection d'outils d'écriture conçus pour accompagner le processus créatif.
 
-## Pour quoi faire ?
+Ces outils cherchent à aider à écrire davantage, à explorer des pistes, à débloquer un passage difficile ou simplement à retrouver le plaisir de raconter des histoires.
 
-J'avais besoin d'un outil pour me remettre à écrire, juste pour le plaisir d'utiliser mon imagination.
-J'ai toujours eu du mal à terminer des longs textes, et je me suis rendu compte que quelques contraintes ainsi qu'un objectif atteignable c'est tout ce dont j'avais besoin.
-D'autant que c'est toujours satisfaisant de terminer quelque chose.
+## Pourquoi ce projet existe
 
-## Comment ça marche
+Ces dernières années, l'IA générative s'est imposée dans les outils créatifs. Beaucoup de solutions mettent l'accent sur le résultat final et la partie "création" à proprement parler est supprimée.
 
-1. Vous choisissez une longueur (un drabble de 100 mots, ou plus) et un temps.
-2. L'outil tire trois à cinq éléments. Ce sont des invitations, pas des règles : vous pouvez les changer, les retirer, en ajouter, ou les détourner.
-3. Vous écrivez, avec un compteur de mots et un minuteur. Dépasser le temps n'est pas une faute.
-4. Vous terminez, vous relisez, et vous gardez le texte (ou pas) en le téléchargeant.
+En utilisant ces outils, j'ai fini par ressentir une forme de découragement. Je me comparais à des résultats que je n'aurais probablement jamais obtenus seul, et je passais de plus en plus de temps à obtenir du contenu plutôt qu'à créer.
 
-Tout se passe dans votre navigateur. Aucun texte n'est envoyé ni enregistré : seuls le thème (clair ou sombre) et les derniers éléments tirés sont mémorisés, pour éviter les répétitions.
+J'ai réalisé que ce qui me plaisait vraiment n'était pas le résultat final, mais le processus en lui-même : chercher une idée, résoudre un problème de narration, expérimenter, écrire un mauvais premier jet, recommencer et surtout découvrir une histoire au fur et à mesure.
+
+PocketMuse est né de cette envie de reprendre la main sur ce processus créatif.
+
+J'ai utilisé l'IA pour m'aider au développement du projet lui-même, je voulais obtenir rapidement un outil qui me propose des exercices d'écriture pour recommencer à créer de moi-même. C'est devenu l'outil "le Tirage". Je ne sais pas si cette démarche paraît hypocrite, mais je prends aujourd'hui beaucoup de plaisir à écrire des microfictions sur le pouce avec mes propres mots.
+
+Comme l'a résumé Thomas Bangalter, l'assistance de l'IA peut parfois court-circuiter l'expérimentation créative. PocketMuse part de l'idée inverse : utiliser la technologie pour accompagner le processus créatif plutôt que pour le remplacer.
+
+## Les outils
+
+### Le Tirage
+
+Un exercice d'écriture court pour retrouver le plaisir d'écrire.
+
+L'outil propose quelques éléments de narration, puis vous choisissez un objectif de mots et un temps d'écriture. L'idée n'est pas de produire une œuvre parfaite, mais de terminer une histoire, même très courte.
+
+Quelques minutes suffisent pour écrire une microfiction, expérimenter une idée et renouer avec une pratique régulière.
+
+### L'Atelier
+
+Un compagnon de réflexion pour les projets en cours.
+
+L'Atelier aide à débloquer les problèmes d'écriture grâce à différents exercices :
+
+- diagnostic d'un blocage ;
+- analyse d'une scène ;
+- fiche de motivation d'un personnage ;
+- test d'une intrigue ;
+- inventaire des fils narratifs ;
+- préparation d'une fin.
+
+Son rôle n'est pas de proposer des solutions toutes faites, mais de poser les bonnes questions.
+
+## Principes
+
+- L'auteur reste au centre du processus créatif.
+- Les outils accompagnent la réflexion plutôt qu'ils ne remplacent l'écriture.
+- Les contraintes sont des invitations, jamais des obligations.
+- Mieux vaut un texte imparfait terminé qu'un projet parfait abandonné.
+- Expérimenter fait partie du plaisir d'écrire.
 
 ## Utiliser
 
-Ouvrez `index.html` dans un navigateur : il n'y a rien à installer, et ça fonctionne hors ligne.
-
-## Personnaliser
-
-Toutes les tables de tirage sont dans `data.js`. Ajoutez, retirez ou remplacez des lignes selon vos besoins ou vos envies.
-
-```js
-lieu: {
-  etiquette: "Lieu",
-  table: [
-    "Une laverie automatique à trois heures du matin",
-    "Votre propre idée ici",
-  ],
-},
-```
-
-## Fichiers
-
-| Fichier | Rôle |
-| --- | --- |
-| `index.html` | les trois écrans : paramètres, écriture, résultat |
-| `style.css` | l'apparence, en noir et blanc, avec un mode sombre |
-| `app.js` | la logique : tirage, compteur, minuteur, export |
-| `data.js` | les tables de tirage |
+Ouvrez `index.html` dans un navigateur. Aucune installation n'est nécessaire et l'application fonctionne hors ligne.
 
 ## Licence
 

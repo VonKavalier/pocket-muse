@@ -1,0 +1,251 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --fond: #e9edf2;
+  --texte: #1e293b;
+  --discret: #566174;
+  --trait: #c3cbd6;
+  --police: Consolas; 
+}
+
+:root[data-theme="dark"] {
+  --fond: #0f172a;
+  --texte: #cbd5e1;
+  --discret: #94a3b8;
+  --trait: #263248;
+  color-scheme: dark;
+}
+
+body {
+  max-width: 55rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: var(--police);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 2px solid var(--texte);
+  outline-offset: 2px;
+}
+
+/* En-tête */
+
+.entete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  margin-bottom: 1.25rem;
+  font-size: 1.5rem;
+  line-height: 1.35;
+}
+
+.outil {
+  margin-left: 0.5rem;
+  color: var(--discret);
+  font-size: 1rem;
+}
+
+.outil::before {
+  content: "· ";
+}
+
+.aide {
+  margin: 1rem 0 1.5rem;
+  color: var(--discret);
+  font-size: 0.9rem;
+}
+
+/* Questions */
+
+#accueil,
+#longueur,
+#duree {
+  max-width: 36rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--texte);
+  border-radius: 2px;
+  background: var(--fond);
+  color: var(--texte);
+  font: inherit;
+}
+
+.choix {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  counter-reset: touche;
+}
+
+.choix button {
+  text-align: left;
+}
+
+.choix button::before {
+  content: counter(touche) "  ";
+  counter-increment: touche;
+  color: var(--discret);
+}
+
+.ligne {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Boutons */
+
+button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--texte);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--texte);
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover,
+.principal {
+  background: var(--texte);
+  color: var(--fond);
+}
+
+.principal:hover {
+  background: transparent;
+  color: var(--texte);
+}
+
+.ecran > .principal {
+  width: 100%;
+}
+
+.actions button,
+.retour {
+  padding: 0 0.5rem;
+  border: 0;
+  text-decoration: underline;
+}
+
+.actions button:hover,
+.retour:hover {
+  background: none;
+  color: var(--texte);
+  text-decoration: none;
+}
+
+.retour {
+  margin-top: 0.75rem;
+  padding: 0;
+}
+
+/* Éléments tirés */
+
+.elements {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.elements li {
+  display: grid;
+  grid-template-columns: 9rem 1fr auto;
+  align-items: baseline;
+  gap: 0.25rem 1rem;
+  padding: 0.7rem 0;
+  /* border-top: 1px solid var(--trait); */
+}
+
+.elements li:last-child {
+  border-bottom: 1px solid var(--trait);
+}
+
+.etiquette {
+  color: var(--discret);
+  font-size: 0.9rem;
+}
+
+.valeur {
+  font-size: 1.15rem;
+}
+
+/* Écriture */
+
+.statut {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--trait);
+  background: var(--fond);
+  font-variant-numeric: tabular-nums;
+}
+
+#minuteur.depasse {
+  text-decoration: underline;
+}
+
+#titre {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+#texte {
+  min-height: 55vh;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  resize: vertical;
+}
+
+/* Résultat */
+
+#resultat-texte {
+  white-space: pre-wrap;
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+#resultat-bilan {
+  margin-bottom: 1.5rem;
+  color: var(--discret);
+}
+
+@media (max-width: 36rem) {
+  .elements li {
+    grid-template-columns: 1fr auto;
+  }
+
+  .etiquette {
+    grid-column: 1 / -1;
+  }
+}
