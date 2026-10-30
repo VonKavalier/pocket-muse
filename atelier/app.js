@@ -110,6 +110,11 @@
     rendre(true);
   }
 
+  function home() {
+    if (!window.confirm("Quitter l'atelier ?")) return;
+    window.location.href = '../';
+  }
+
   /* ---------- Export du récapitulatif ---------- */
 
   function recapActuel() {
@@ -317,6 +322,7 @@
     $("changer").addEventListener("click", () => { etat.courant = null; etat.pile = []; modeNote = false; rendre(true); });
     $("recommencer").addEventListener("click", recommencer);
     $("effacer").addEventListener("click", toutEffacer);
+    $("home").addEventListener("click", home);
 
     const theme = $("bascule-theme");
     const majTheme = () => { theme.textContent = document.documentElement.dataset.theme === "dark" ? "Thème clair" : "Thème sombre"; };

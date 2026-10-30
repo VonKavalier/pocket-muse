@@ -280,6 +280,10 @@ function recommencer() {
   afficherEcran("accueil");
 }
 
+function home() {
+  if (!window.confirm("Quitter le tirage ?")) return;
+  window.location.href = '../';
+}
 
 /* Compteur et minuteur */
 
@@ -438,6 +442,7 @@ function brancherEvenements() {
   $("telecharger").addEventListener("click", telecharger);
   $("copier").addEventListener("click", copier);
   $("recommencer").addEventListener("click", recommencer);
+  $("home").addEventListener("click", home);
   window.addEventListener("beforeunload", protegerLeTexte);
 
   document.addEventListener("keydown", gererTouches);

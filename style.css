@@ -1,3 +1,5 @@
+/* ===== Styles partagés (accueil, Atelier, Tirage) ===== */
+
 * {
   box-sizing: border-box;
 }
@@ -34,6 +36,8 @@ body {
   outline-offset: 2px;
 }
 
+/* En-tête */
+
 .entete {
   display: flex;
   align-items: center;
@@ -47,6 +51,35 @@ h1 {
   margin: 0;
   font-size: 1.5rem;
   font-weight: 400;
+  cursor: pointer;
+}
+
+.outil {
+  margin-left: 0.5rem;
+  color: var(--discret);
+  font-size: 1rem;
+}
+
+.outil::before {
+  content: "· ";
+}
+
+.aide {
+  color: var(--discret);
+  font-size: 0.9rem;
+}
+
+/* Formulaires et boutons */
+
+input,
+select,
+textarea {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--texte);
+  border-radius: 2px;
+  background: var(--fond);
+  color: var(--texte);
+  font: inherit;
 }
 
 button {
@@ -59,10 +92,18 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+button:hover,
+.principal {
   background: var(--texte);
   color: var(--fond);
 }
+
+.principal:hover {
+  background: transparent;
+  color: var(--texte);
+}
+
+/* ===== Page d'accueil ===== */
 
 .intro {
   max-width: 36rem;
@@ -70,8 +111,6 @@ button:hover {
   font-size: 1.25rem;
   line-height: 1.5;
 }
-
-/* Liste des outils */
 
 .outils {
   margin: 0;
@@ -108,4 +147,21 @@ button:hover {
 .outils a:hover .nom,
 .outils a:focus-visible .nom {
   text-decoration: underline;
+}
+
+/* Pied de page */
+
+footer {
+  padding-top: 1rem;
+  color: var(--discret);
+  font-size: 0.9375rem;
+}
+
+footer a {
+  color: inherit;
+}
+
+footer a:hover,
+footer a:focus-visible {
+  color: var(--texte);
 }

@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PocketMuse</title>
-  <script>
-    try {
-      const choix = localStorage.getItem("theme");
-      const sombre = matchMedia("(prefers-color-scheme: dark)").matches;
-      document.documentElement.dataset.theme = choix || (sombre ? "dark" : "light");
-    } catch (erreur) {
-      document.documentElement.dataset.theme = "light";
-    }
-  </script>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>PocketMuse</title>
+        <script>
+            try {
+                const choix = localStorage.getItem("theme");
+                const sombre = matchMedia("(prefers-color-scheme: dark)").matches;
+                document.documentElement.dataset.theme = choix || (sombre ? "dark" : "light");
+            } catch (erreur) {
+                document.documentElement.dataset.theme = "light";
+            }
+        </script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
 
-  <header class="entete">
-    <h1>PocketMuse</h1>
-    <button id="bascule-theme" type="button"></button>
-  </header>
+        <header class="entete">
+            <h1 id="home">PocketMuse</h1>
+            <button id="bascule-theme" type="button"></button>
+        </header>
 
-  <main>
+        <main>
 
-    <p class="intro">De petits outils pour retrouver l'envie d'écrire, sans enjeu. Aucun ne rédige à votre place.</p>
+            <p class="intro">De petits outils pour retrouver l'envie d'écrire, sans enjeu.</p>
 
-    <ul class="outils">
-      <li>
-        <a href="tirage/">
-          <span class="nom">Le Tirage</span>
-          <span class="description">Quelques consignes tirées au sort (un personnage, un lieu, un objet...), un texte court, un minuteur facultatif. Pour se remettre à écrire.</span>
-        </a>
-      </li>
-      <li>
-        <a href="atelier/">
-          <span class="nom">L'Atelier</span>
-          <span class="description">Décrivez votre blocage : l'atelier ne propose aucune idée, il pose des questions pour vous aider à retrouver le fil.</span>
-        </a>
-      </li>
-    </ul>
+            <ul class="outils">
+                <li>
+                    <a href="tirage/">
+                        <span class="nom">Le Tirage</span>
+                        <span class="description">Quelques consignes tirées au sort (un personnage, un lieu, un objet...), un texte court, un minuteur facultatif. Pour se remettre à écrire.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="atelier/">
+                        <span class="nom">L'Atelier</span>
+                        <span class="description">Décrivez votre blocage d'écriture : l'atelier pose des questions pour vous aider à retrouver le fil.</span>
+                    </a>
+                </li>
+            </ul>
+        
+        </main>
 
-  </main>
-
-  <script src="app.js"></script>
-</body>
+        <footer>
+            <a href="https://github.com/VonKavalier/pocket-muse" target="_blank" rel="noopener">GitHub</a>
+        </footer>
+        
+        <script src="app.js"></script>
+    </body>
 </html>
