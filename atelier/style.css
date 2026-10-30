@@ -1,0 +1,364 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --fond: #e9edf2;
+  --panneau: #f3f5f8;
+  --texte: #1e293b;
+  --discret: #566174;
+  --trait: #c3cbd6;
+  --police: Consolas, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+:root[data-theme="dark"] {
+  --fond: #0f172a;
+  --panneau: #131c32;
+  --texte: #cbd5e1;
+  --discret: #94a3b8;
+  --trait: #263248;
+  color-scheme: dark;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  height: 100dvh;
+  max-width: 55rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: var(--police);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 2px solid var(--texte);
+  outline-offset: 2px;
+}
+
+/* En-tête */
+
+.entete {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.outil {
+  margin-left: 0.5rem;
+  color: var(--discret);
+  font-size: 1rem;
+}
+
+.outil::before {
+  content: "· ";
+}
+
+.aide {
+  flex: none;
+  margin: 0;
+  color: var(--discret);
+  font-size: 0.9rem;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 0;
+}
+
+/* Formulaires et boutons */
+
+input,
+select,
+textarea {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--texte);
+  border-radius: 2px;
+  background: var(--fond);
+  color: var(--texte);
+  font: inherit;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--texte);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--texte);
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover,
+.principal {
+  background: var(--texte);
+  color: var(--fond);
+}
+
+.principal:hover {
+  background: transparent;
+  color: var(--texte);
+}
+
+/* La fenêtre de chat */
+
+.fenetre {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 14rem;
+  border: 1px solid var(--texte);
+  border-radius: 2px;
+  background: var(--panneau);
+  overflow: hidden;
+}
+
+.barre {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--trait);
+}
+
+.titre {
+  color: var(--discret);
+  font-size: 0.9rem;
+}
+
+.reglages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.reglages label {
+  color: var(--discret);
+  font-size: 0.9rem;
+}
+
+.reglages select,
+.petit {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.9rem;
+}
+
+.conversation {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 0;
+  margin: 0;
+  padding: 1rem;
+  list-style: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: var(--trait) transparent;
+}
+
+.conversation li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  max-width: min(85%, 38rem);
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--trait);
+  border-radius: 2px;
+}
+
+.etiquette {
+  color: var(--discret);
+  font-size: 0.8rem;
+}
+
+.valeur {
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.muse {
+  align-self: flex-start;
+}
+
+.muse .valeur {
+  font-size: 1.1rem;
+}
+
+.vous {
+  align-self: flex-end;
+  border-color: var(--texte);
+}
+
+.vous .valeur {
+  font-style: italic;
+}
+
+.note {
+  align-self: flex-end;
+  border-style: dashed;
+}
+
+.note .valeur {
+  color: var(--discret);
+}
+
+.recap {
+  max-width: min(95%, 44rem);
+}
+
+.recap .valeur {
+  font-size: 1rem;
+}
+
+/* Saisie */
+
+.saisie {
+  display: flex;
+  flex: none;
+  align-items: flex-end;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-top: 1px solid var(--trait);
+}
+
+.saisie textarea {
+  flex: 1;
+  max-height: 10rem;
+  resize: none;
+  line-height: 1.4;
+}
+
+@media (max-width: 36rem) {
+  body {
+    padding: 0.75rem;
+  }
+
+  .entete {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .conversation {
+    padding: 0.75rem;
+  }
+
+  .conversation li {
+    max-width: 92%;
+  }
+}
+
+/* Mode guidé */
+
+.actions,
+.rapides {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+}
+
+.actions {
+  border-bottom: 1px solid var(--trait);
+}
+
+.rapides {
+  padding-bottom: 0;
+}
+
+.rapides:empty {
+  display: none;
+}
+
+button:disabled {
+  border-color: var(--trait);
+  background: transparent;
+  color: var(--discret);
+  cursor: not-allowed;
+}
+
+button[aria-pressed="true"] {
+  background: var(--texte);
+  color: var(--fond);
+}
+
+.case {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.case input {
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  accent-color: var(--texte);
+}
+
+.conversation:focus-visible {
+  outline-offset: -4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* La muse écrit */
+
+.points { display: inline-flex; gap: 0.3rem; align-items: center; height: 1.7rem; }
+
+.point {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--discret);
+  animation: pulsation 1.2s infinite ease-in-out;
+}
+
+.point:nth-child(2) { animation-delay: 0.15s; }
+.point:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes pulsation {
+  0%, 80%, 100% { opacity: 0.25; }
+  40% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .point { animation: none; opacity: 0.6; }
+}

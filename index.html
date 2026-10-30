@@ -18,90 +18,31 @@
 <body>
 
   <header class="entete">
-      <h1>PocketMuse</h1>
+    <h1>PocketMuse</h1>
     <button id="bascule-theme" type="button"></button>
   </header>
 
   <main>
 
-    <section id="accueil" class="ecran">
-      <h2>Un mot, une image ou un souvenir qui vous traîne en tête en ce moment ?</h2>
-      <input id="ingredient" type="text" placeholder="Facultatif" aria-label="Votre ingrédient">
-      <p class="aide">Entrée pour continuer, même vide.</p>
-      <button id="continuer" class="principal" type="button" data-vers="longueur">Continuer</button>
-    </section>
+    <p class="intro">De petits outils pour retrouver l'envie d'écrire, sans enjeu. Aucun ne rédige à votre place.</p>
 
-    <section id="longueur" class="ecran" hidden>
-      <h2>Quelle longueur visez-vous ?</h2>
-      <div class="choix" data-cle="mots">
-        <button type="button" data-valeur="100" data-vers="duree">100 mots (drabble)</button>
-        <button type="button" data-valeur="150" data-vers="duree" class="defaut">150 mots</button>
-        <button type="button" data-valeur="300" data-vers="duree">300 mots</button>
-        <button type="button" data-valeur="500" data-vers="duree">500 mots</button>
-      </div>
-      <p class="aide">Touches 1 à 4, ou Entrée pour 150 mots.</p>
-      <button class="retour" type="button" data-vers="accueil">Retour</button>
-    </section>
-
-    <section id="duree" class="ecran" hidden>
-      <h2>Combien de temps vous donnez-vous ?</h2>
-      <div class="choix" data-cle="minutes">
-        <button type="button" data-valeur="5" data-vers="tirage">5 minutes</button>
-        <button type="button" data-valeur="10" data-vers="tirage">10 minutes</button>
-        <button type="button" data-valeur="15" data-vers="tirage" class="defaut">15 minutes</button>
-        <button type="button" data-valeur="30" data-vers="tirage">30 minutes</button>
-        <button type="button" data-valeur="0" data-vers="tirage">Sans minuteur</button>
-      </div>
-      <p class="aide">Touches 1 à 5, ou Entrée pour 15 minutes.</p>
-      <button class="retour" type="button" data-vers="longueur">Retour</button>
-    </section>
-
-    <section id="tirage" class="ecran" hidden>
-      <h2>Votre proposition d'écriture</h2>
-      <ul id="proposition" class="elements"></ul>
-      <div class="ligne">
-        <button id="ajouter" type="button">Ajouter un élément</button>
-        <button id="nouveau-tirage" type="button">Nouveau tirage</button>
-      </div>
-      <p class="aide">N'oubliez pas : ce sont des propositions, pas des règles.</p>
-      <button id="commencer" class="principal defaut" type="button">On y va</button>
-      <button class="retour" type="button" data-vers="duree">Retour</button>
-    </section>
-
-    <section id="ecriture" class="ecran" hidden>
-      <div class="statut">
-        <span id="compteur"></span>
-        <span id="minuteur"></span>
-      </div>
-
-      <ul id="rappel" class="elements"></ul>
-
-      <input id="titre" type="text" placeholder="Titre" aria-label="Titre">
-      <textarea id="texte" placeholder="Votre texte" aria-label="Votre texte"></textarea>
-
-      <button id="terminer" class="principal" type="button">Terminer</button>
-    </section>
-
-    <section id="resultat" class="ecran" hidden>
-      <article>
-        <h2 id="resultat-titre"></h2>
-        <p id="resultat-texte"></p>
-      </article>
-
-      <p id="resultat-bilan"></p>
-      <ul id="resultat-elements" class="elements"></ul>
-
-      <div class="ligne">
-        <button id="telecharger" class="principal" type="button">Télécharger (.txt)</button>
-        <button id="copier" type="button">Copier le texte</button>
-        <button id="reprendre" type="button">Reprendre l'écriture</button>
-        <button id="recommencer" type="button">Recommencer</button>
-      </div>
-    </section>
+    <ul class="outils">
+      <li>
+        <a href="tirage/">
+          <span class="nom">Le Tirage</span>
+          <span class="description">Quelques consignes tirées au sort (un personnage, un lieu, un objet...), un texte court, un minuteur facultatif. Pour se remettre à écrire.</span>
+        </a>
+      </li>
+      <li>
+        <a href="atelier/">
+          <span class="nom">L'Atelier</span>
+          <span class="description">Décrivez votre blocage : l'atelier ne propose aucune idée, il pose des questions pour vous aider à retrouver le fil.</span>
+        </a>
+      </li>
+    </ul>
 
   </main>
 
-  <script src="data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

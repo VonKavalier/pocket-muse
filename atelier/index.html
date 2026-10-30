@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PocketMuse · L'Atelier</title>
+  <script>
+    try {
+      const choix = localStorage.getItem("theme");
+      const sombre = matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.dataset.theme = choix || (sombre ? "dark" : "light");
+    } catch (erreur) {
+      document.documentElement.dataset.theme = "light";
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="entete">
+    <h1>PocketMuse <span class="outil">L'Atelier</span></h1>
+    <button id="bascule-theme" type="button"></button>
+  </header>
+
+  <main>
+
+    <section class="fenetre" aria-label="Exercice avec l'atelier">
+
+      <div class="barre">
+        <span class="titre" id="progression"></span>
+        <div class="reglages">
+          <button id="effacer" class="petit" type="button">Tout effacer</button>
+        </div>
+      </div>
+
+      <div class="actions" role="group" aria-label="Navigation dans l'exercice">
+        <button id="retour" class="petit" type="button">Retour</button>
+        <button id="passer" class="petit" type="button">Passer</button>
+        <button id="changer" class="petit" type="button">Changer d'exercice</button>
+        <button id="recommencer" class="petit" type="button">Recommencer</button>
+      </div>
+
+      <ul id="conversation" class="conversation" role="log" aria-live="off" aria-label="Échange avec l'atelier" tabindex="0"></ul>
+
+      <div id="rapides" class="rapides" role="group" aria-label="Réponses rapides"></div>
+
+      <form id="saisie" class="saisie">
+        <textarea id="message" rows="1" autocomplete="off" aria-label="Votre réponse"></textarea>
+        <button id="mode-note" class="petit" type="button" aria-pressed="false">Note</button>
+        <button id="envoyer" class="principal" type="submit">Envoyer</button>
+      </form>
+
+      <p id="annonce" class="sr-only" aria-live="polite"></p>
+
+    </section>
+
+    <p class="aide">Entrée envoie, Maj + Entrée passe à la ligne. « Note » enregistre une remarque libre sans changer d'étape. Rien ne quitte votre navigateur.</p>
+
+  </main>
+
+  <script src="data.js"></script>
+  <script src="moteur.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
